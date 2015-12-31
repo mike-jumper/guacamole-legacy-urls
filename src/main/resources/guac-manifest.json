@@ -1,0 +1,13 @@
+{
+
+    "guacamoleVersion" : "0.9.9",
+
+    "name"      : "Simple Client URLs",
+    "namespace" : "guac-simple-client-urls",
+
+    "js" : [
+        "simpleUrlModule.js",
+        "simpleUrlRouteConfig.js"
+    ]
+
+}
