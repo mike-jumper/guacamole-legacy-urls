@@ -51,7 +51,8 @@ Installation
    the Guacamole manual](http://guac-dev.org/doc/gug/configuring-guacamole.html#guacamole-home).
 
 4. Restart Tomcat (or whichever servlet container you are using) to restart
-   Guacamole and load the new extension.
+   Guacamole and load the new extension. **You may also need to clear browser
+   cache for the changes to take effect.**
 
 Caveats
 -------
