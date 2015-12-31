@@ -25,7 +25,8 @@
  * legacy-style client URLs (the format used in 0.9.7 and older).
  */
 angular.module('legacyUrl', [
-    'auth'
+    'auth',
+    'navigation'
 ]);
 
 // Include legacyUrl module in index module dependencies, such that the
