@@ -2,12 +2,12 @@
 
     "guacamoleVersion" : "0.9.9",
 
-    "name"      : "Simple Client URLs",
-    "namespace" : "guac-simple-client-urls",
+    "name"      : "Legacy Client URLs",
+    "namespace" : "guac-legacy-client-urls",
 
     "js" : [
-        "simpleUrlModule.js",
-        "simpleUrlRouteConfig.js"
+        "legacyUrlModule.js",
+        "legacyUrlRouteConfig.js"
     ]
 
 }

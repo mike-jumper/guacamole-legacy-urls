@@ -22,19 +22,18 @@
 
 /**
  * Config block augmenting Guacamole's existing URL routing, automatically
- * redirecting requests from "/connection/[CONNECTION IDENTIFIER]" to
- * "/client/[CLIENT IDENTIFIER]".
+ * redirecting requests for the legacy "/client/[TYPE]/[CONNECTION IDENTIFIER]"
+ * to "/client/[CLIENT IDENTIFIER]".
  */
-angular.module('simpleUrl').config(['$routeProvider',
-        function simpleUrlRouteConfig($routeProvider) {
+angular.module('legacyUrl').config(['$routeProvider',
+        function legacyUrlRouteConfig($routeProvider) {
 
     /**
      * Re-authenticates with the Guacamole server and, if successful, redirects
-     * to from "/connection/[CONNECTION IDENTIFIER]" to the proper
+     * for the legacy "/client/[TYPE]/[CONNECTION IDENTIFIER]" to the proper
      * "/client/[CLIENT IDENTIFIER]" URL. The client identifier is derived
-     * assuming that the destination is a connection (not a group) and the
-     * data source is the default data source (the data source which
-     * authenticated the user).
+     * assuming that the associated data source is the default data source
+     * (the data source which authenticated the user).
      *
      * @param {Service} $injector
      *     The Angular $injector service.
@@ -61,14 +60,11 @@ angular.module('simpleUrl').config(['$routeProvider',
         authenticationService.updateCurrentToken($location.search())
         .then(function reauthenticationSucceeded() {
 
-            // Get connection identifier from parameters
-            var identifier = $route.current.params.id;
-
             // Derive client identifier directly from connection identifier
             var clientIdentifier = ClientIdentifier.toString({
                 dataSource : authenticationService.getDataSource(),
-                type       : ClientIdentifier.Types.CONNECTION,
-                id         : identifier
+                type       : $route.current.params.type,
+                id         : $route.current.params.id
             });
 
             // Redirect to proper client URL
@@ -89,8 +85,8 @@ angular.module('simpleUrl').config(['$routeProvider',
 
     }];
 
-    // Redirect /connection/IDENTIFIER to /client/...
-    $routeProvider.when('/connection/:id/:params?', {
+    // Redirect /client/TYPE/IDENTIFIER to /client/...
+    $routeProvider.when('/client/:type/:id/:params?', {
         resolve       : { redirectToClient : redirectToClient }
     });
 

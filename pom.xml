@@ -5,10 +5,10 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.glyptodon.guacamole</groupId>
-    <artifactId>guacamole-simple-client-urls</artifactId>
+    <artifactId>guacamole-legacy-urls</artifactId>
     <packaging>jar</packaging>
     <version>0.9.9</version>
-    <name>guacamole-simple-client-urls</name>
+    <name>guacamole-legacy-urls</name>
     <url>http://guac-dev.org/</url>
 
     <properties>

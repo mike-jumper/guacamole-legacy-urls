@@ -22,12 +22,12 @@
 
 /**
  * Module which augments Guacamole's existing URL routing, adding support for
- * simpler client URLs.
+ * legacy-style client URLs (the format used in 0.9.7 and older).
  */
-angular.module('simpleUrl', [
+angular.module('legacyUrl', [
     'auth'
 ]);
 
-// Include simpleUrl module in index module dependencies, such that the
+// Include legacyUrl module in index module dependencies, such that the
 // existing routing can be modified
-angular.module('index').requires.push('simpleUrl');
+angular.module('index').requires.push('legacyUrl');
