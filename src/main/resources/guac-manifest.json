@@ -3,7 +3,7 @@
     "guacamoleVersion" : "0.9.9",
 
     "name"      : "Legacy Client URLs",
-    "namespace" : "guac-legacy-client-urls",
+    "namespace" : "guac-legacy-urls",
 
     "js" : [
         "legacyUrlModule.js",
