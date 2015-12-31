@@ -6,6 +6,53 @@ URL format used in Guacamole 0.9.7 and older. Requests for
 `/client/TYPE/IDENTIFIER` are automatically redirected to the corresponding and
 proper `/client/[DATA]` URL.
 
+
+Installation
+------------
+
+1. Clone the "guacamole-legacy-urls" repository using git:
+
+   ```
+   $ git clone https://github.com/mike-jumper/guacamole-legacy-urls.git
+   Cloning into 'guacamole-legacy-urls'...
+   remote: Counting objects: 28, done.
+   remote: Compressing objects: 100% (14/14), done.
+   remote: Total 28 (delta 8), reused 27 (delta 7), pack-reused 0
+   Unpacking objects: 100% (28/28), done.
+   Checking connectivity... done.
+   $ 
+   ```
+
+2. Build the extension itself using Maven:
+
+   ```
+   $ cd guacamole-legacy-urls/
+   $ mvn package
+   [INFO] Scanning for projects...
+   [INFO]                                                                         
+   [INFO] ------------------------------------------------------------------------
+   [INFO] Building guacamole-legacy-urls 0.9.9
+   [INFO] ------------------------------------------------------------------------
+   [INFO] 
+   ...
+   [INFO] Building jar: guacamole-legacy-urls/target/guacamole-legacy-urls-0.9.9.jar
+   [INFO] ------------------------------------------------------------------------
+   [INFO] BUILD SUCCESS
+   [INFO] ------------------------------------------------------------------------
+   [INFO] Total time: 0.968 s
+   [INFO] Finished at: 2015-12-31T03:18:23-08:00
+   [INFO] Final Memory: 11M/106M
+   [INFO] ------------------------------------------------------------------------
+   $
+   ```
+3. Copy the resulting `target/guacamole-legacy-urls-0.9.9.jar` file to
+   `GUACAMOLE_HOME/extensions`. If unsure what `GUACAMOLE_HOME/extensions`
+   refers to, please consult [the documentation covering `GUACAMOLE_HOME` in
+   the Guacamole manual](http://guac-dev.org/doc/gug/configuring-guacamole.html#guacamole-home).
+
+4. Restart Tomcat (or whichever servlet container you are using) to restart
+   Guacamole and load the new extension.
+
 Caveats
 -------
 
