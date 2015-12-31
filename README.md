@@ -12,7 +12,7 @@ Installation
 
 1. Clone the "guacamole-legacy-urls" repository using git:
 
-   ```
+   ```console
    $ git clone https://github.com/mike-jumper/guacamole-legacy-urls.git
    Cloning into 'guacamole-legacy-urls'...
    remote: Counting objects: 28, done.
@@ -25,7 +25,7 @@ Installation
 
 2. Build the extension itself using Maven:
 
-   ```
+   ```console
    $ cd guacamole-legacy-urls/
    $ mvn package
    [INFO] Scanning for projects...
